@@ -1,0 +1,13 @@
+<h1><%= @patient.full_name %></h1>
+
+<h3>Appointments:</h3>
+<% @patient.appointments.each do |a| %>
+  <div class="thumbnail">
+  <h3>Date & Time</h3>
+  <%= a.date.to_s(:long) %>
+  </div>
+  <br />
+<% end %>
+
+<%= link_to "View Doctors", doctors_path %>
+<%= link_to "Delete Patient Info", @patient, method: :delete %>

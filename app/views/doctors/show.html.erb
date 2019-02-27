@@ -1,0 +1,11 @@
+<h2>Patients</h2>
+<ul>
+<% @doctor.patients.each do |p| %>
+  <li><%= link_to p.full_name, patient_path(p) %></li>
+  <% p.appointments.each do |a| %>
+  <%= a.date.to_s(:long) %>
+  <% end%>
+<% end %>
+</ul>
+<%= link_to "Add Appointments", new_doctor_appointment_path(@doctor) %>
+<%= link_to "Show Appointments", doctor_appointments_path(@doctor) %>

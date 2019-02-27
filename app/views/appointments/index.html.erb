@@ -1,0 +1,7 @@
+<h1><%= @doctor.name %>'s Appointments</h2>
+<% @doctor.appointments.each do |a| %>
+    <%= a.date.to_s(:long) %> |
+    <%= a.patient.first_name %>
+    <%= link_to "Cancel Appointment", doctor_appointment_path(@doctor, a), method: :delete %>
+  <br />
+  <% end%>
